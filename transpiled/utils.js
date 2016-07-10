@@ -1,16 +1,21 @@
 'use strict';
 
-import {Map, List} from 'immutable';
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+exports.getUIState = undefined;
+
+var _immutable = require('immutable');
 
 /**
  * getUIState inspects redux' global state store and returns the UI state node.
  *
  * This checks to see whether state is an immutable map or a POJO.
  */
-export const getUIState = (state) => {
+var getUIState = exports.getUIState = function getUIState(state) {
   if (typeof state.get === 'function') {
-    if (Map.isMap(state)) {
-      if (List.isList(state.get('history'))) {
+    if (_immutable.Map.isMap(state)) {
+      if (_immutable.List.isList(state.get('history'))) {
         return state.get('current').get('ui');
       }
     } else {
@@ -18,4 +23,4 @@ export const getUIState = (state) => {
     }
   }
   return state.ui;
-}
+};
