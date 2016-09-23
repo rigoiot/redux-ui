@@ -342,9 +342,7 @@ function ui(key) {
       }, {
         key: 'render',
         value: function render() {
-          return _react2.default.createElement(WrappedComponent, _extends({
-            ref: 'wrappedInstance'
-          }, this.props, {
+          return _react2.default.createElement(WrappedComponent, _extends({}, this.props, {
             uiKey: this.key,
             uiPath: this.uiPath,
             ui: this.mergeUIProps(),

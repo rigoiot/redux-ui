@@ -289,7 +289,6 @@ export default function ui(key, opts = {}) {
         render() {
           return (
             <WrappedComponent
-              ref='wrappedInstance'
               { ...this.props }
               uiKey={ this.key }
               uiPath={ this.uiPath }
